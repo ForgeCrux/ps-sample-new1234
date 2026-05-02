@@ -1,0 +1,18 @@
+name: Apigee Platform CI 
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: ForgeCrux/pipeline-template/.github/workflows/apigee-v1.yaml@main
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      apigee_org: my-org
+      apigee_env: test
+      deploy_proxy: my-api-proxy
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      GH_TOKEN: "ProbeStack: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"

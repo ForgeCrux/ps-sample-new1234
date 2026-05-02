@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="LC-LookupExternalMemberIdCache">
+    <DisplayName>LC-LookupExternalMemberIdCache</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix>virginpulse_externalMemberId</Prefix>
+        <KeyFragment ref="incentives.memberId"/>
+    </CacheKey>
+    <Scope>Exclusive</Scope>
+    <AssignTo>virginpulse.externalMemberId</AssignTo>
+</LookupCache>

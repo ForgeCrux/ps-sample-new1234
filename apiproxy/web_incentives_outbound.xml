@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="web_incentives_outbound">
+    <Basepaths>/member/web/v1/incentives</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1625777458073</CreatedAt>
+    <CreatedBy>vamsi.sanagapally@bcbsma.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>web_incentives</DisplayName>
+    <LastModifiedAt>1627316194497</LastModifiedAt>
+    <LastModifiedBy>mallikarjuna.pikkili@bcbsma.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:a8ca04f1557ff5ffd9e60bcdbe42a61ff206d94e8a1088287c86c53b405bb99ab3bdbd933f53989453dfd68a0890582b3dc7cd6817a9b192c0e8cfee48ddfe76:us-east-1</ManifestVersion>
+    <Policies>
+        <Policy>EV-ExtractExternalMemberId</Policy>
+        <Policy>EV-ExtractMemberId</Policy>
+        <Policy>JS-FixTargetPath</Policy>
+        <Policy>LC-LookupExternalMemberIdCache</Policy>
+        <Policy>PC-PopulateExternalMemberIdCache</Policy>
+        <Policy>RF-UnknownRequest</Policy>
+        <Policy>SC-GetExternalMemberId</Policy>
+        <Policy>SF-GetVirginpulseToken</Policy>
+        <Policy>SF-ValidateAccessToken</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://JS-FixTargetPath.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>virginpulse</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

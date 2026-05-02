@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="SC-GetExternalMemberId">
+    <DisplayName>SC-GetExternalMemberId</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="myRequest">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Set>
+            <Headers>
+                <Header name="Authorization">Bearer {virginpulse_access_token}</Header>
+            </Headers>
+            <Payload contentType="application/json">{
+                "employeeIds": [
+                    {
+                        "employeeId": "{incentives.memberId}"
+                    }
+                ]
+            }</Payload>
+            <Verb>POST</Verb>
+        </Set>
+    </Request>
+    <Response>virginpulse_getExternalMemberId_response</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <SSLInfo>
+            <Enabled>true</Enabled>
+        </SSLInfo>
+        <LoadBalancer>
+            <Server name="TS-Virginpulse"/>
+        </LoadBalancer>
+        <Path>/dev-api/v1/admin/sponsors/24058/externalMemberIds</Path>
+    </HTTPTargetConnection>
+</ServiceCallout>

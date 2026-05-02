@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV-ExtractExternalMemberId">
+    <DisplayName>EV-ExtractExternalMemberId</DisplayName>
+    <Properties/>
+    <Source>virginpulse_getExternalMemberId_response</Source>
+    <JSONPayload>
+        <Variable name="virginpulse.externalMemberId" type="string">
+            <JSONPath>$.externalMemberIds[0].externalMemberId</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>
