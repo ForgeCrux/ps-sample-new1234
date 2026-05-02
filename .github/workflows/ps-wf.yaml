@@ -1,7 +1,9 @@
-name: Apigee Platform CI 
+name: Apigee Platform CI
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -10,9 +12,12 @@ jobs:
       contents: read
       id-token: write
     with:
-      apigee_org: my-org
-      apigee_env: test
-      deploy_proxy: my-api-proxy
+      apigee_org: gen-ai-poc-onboarding
+      apigee_env: dev
+      deploy_proxy: sphere-audit-platform-application
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      GH_TOKEN: "ProbeStack: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"
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      APP_ID: ${{ secrets.APP_ID }}
+      APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
+      GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}   # ✅ FIX
